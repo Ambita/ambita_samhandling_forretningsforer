@@ -12,58 +12,78 @@ layout: home
     <div class="card-section">
       <h2>Main Process Flow Messages</h2>
       <div class="card-grid">
-        <div class="nav-card">
-          <h3><a href="docs/boliginformasjon">Boliginformasjon</a></h3>
-          <p>Property information requests</p>
-        </div>
-        <div class="nav-card">
-          <h3><a href="docs/forhandsutlysing">Forhåndsutlysing</a></h3>
-          <p>Advance clarification of preemption rights</p>
-        </div>
-        <div class="nav-card">
-          <h3><a href="docs/salgsmelding">Salgsmelding</a></h3>
-          <p>Sales notifications and ownership transfers</p>
-        </div>
-        <div class="nav-card">
-          <h3><a href="docs/endring-overdragelsesdato">Endring overdragelsesdato</a></h3>
-          <p>Transfer date changes</p>
-        </div>
-        <div class="nav-card">
-          <h3><a href="docs/endring-kjopere">Endring kjøpere</a></h3>
-          <p>Buyer changes</p>
-        </div>
-        <div class="nav-card">
-          <h3><a href="docs/sluttbrev">Sluttbrev</a></h3>
-          <p>Final completion letters</p>
-        </div>
-        <div class="nav-card">
-          <h3><a href="docs/restanse">Restanse</a></h3>
-          <p>Arrears handling</p>
-        </div>
+        <a href="docs/boliginformasjon" class="nav-card-link">
+          <div class="nav-card">
+            <h3>Boliginformasjon</h3>
+            <p>Property information requests</p>
+          </div>
+        </a>
+        <a href="docs/forhandsutlysing" class="nav-card-link">
+          <div class="nav-card">
+            <h3>Forhåndsutlysing</h3>
+            <p>Advance clarification of preemption rights</p>
+          </div>
+        </a>
+        <a href="docs/salgsmelding" class="nav-card-link">
+          <div class="nav-card">
+            <h3>Salgsmelding</h3>
+            <p>Sales notifications and ownership transfers</p>
+          </div>
+        </a>
+        <a href="docs/endring-overdragelsesdato" class="nav-card-link">
+          <div class="nav-card">
+            <h3>Endring overdragelsesdato</h3>
+            <p>Transfer date changes</p>
+          </div>
+        </a>
+        <a href="docs/endring-kjopere" class="nav-card-link">
+          <div class="nav-card">
+            <h3>Endring kjøpere</h3>
+            <p>Buyer changes</p>
+          </div>
+        </a>
+        <a href="docs/sluttbrev" class="nav-card-link">
+          <div class="nav-card">
+            <h3>Sluttbrev</h3>
+            <p>Final completion letters</p>
+          </div>
+        </a>
+        <a href="docs/restanse" class="nav-card-link">
+          <div class="nav-card">
+            <h3>Restanse</h3>
+            <p>Arrears handling</p>
+          </div>
+        </a>
       </div>
     </div>
 
     <div class="card-section">
       <h2>Standalone Information Messages</h2>
       <div class="card-grid">
-        <div class="nav-card">
-          <h3><a href="docs/sumgjeld">SumGjeld</a></h3>
-          <p>Total debt requests</p>
-        </div>
-        <div class="nav-card">
-          <h3><a href="docs/sumfelleskostnader">SumFelleskostnader</a></h3>
-          <p>Total common costs requests</p>
-        </div>
+        <a href="docs/sumgjeld" class="nav-card-link">
+          <div class="nav-card">
+            <h3>SumGjeld</h3>
+            <p>Total debt requests</p>
+          </div>
+        </a>
+        <a href="docs/sumfelleskostnader" class="nav-card-link">
+          <div class="nav-card">
+            <h3>SumFelleskostnader</h3>
+            <p>Total common costs requests</p>
+          </div>
+        </a>
       </div>
     </div>
 
     <div class="card-section">
       <h2>System Messages</h2>
       <div class="card-grid">
-        <div class="nav-card">
-          <h3><a href="docs/feilmeldinger">Feilmeldinger</a></h3>
-          <p>Error messages</p>
-        </div>
+        <a href="docs/feilmeldinger" class="nav-card-link">
+          <div class="nav-card">
+            <h3>Feilmeldinger</h3>
+            <p>Error messages</p>
+          </div>
+        </a>
       </div>
     </div>
   </div>
@@ -85,58 +105,78 @@ layout: home
     <div class="card-section">
       <h2>Meldinger i hovedprosessen</h2>
       <div class="card-grid">
-        <div class="nav-card">
-          <h3><a href="docs/boliginformasjon">Boliginformasjon</a></h3>
-          <p>Bestilling av boliginformasjon</p>
-        </div>
-        <div class="nav-card">
-          <h3><a href="docs/forhandsutlysing">Forhåndsutlysing</a></h3>
-          <p>Forhåndsavklaringer om forkjøpsrett</p>
-        </div>
-        <div class="nav-card">
-          <h3><a href="docs/salgsmelding">Salgsmelding</a></h3>
-          <p>Varsling om salg og eierskifter</p>
-        </div>
-        <div class="nav-card">
-          <h3><a href="docs/endring-overdragelsesdato">Endring overdragelsesdato</a></h3>
-          <p>Oppdatering av overtakelsesdato</p>
-        </div>
-        <div class="nav-card">
-          <h3><a href="docs/endring-kjopere">Endring kjøpere</a></h3>
-          <p>Endringer i kjøperinformasjon</p>
-        </div>
-        <div class="nav-card">
-          <h3><a href="docs/sluttbrev">Sluttbrev</a></h3>
-          <p>Sluttbrev og ferdigstillelse</p>
-        </div>
-        <div class="nav-card">
-          <h3><a href="docs/restanse">Restanse</a></h3>
-          <p>Håndtering av restanser</p>
-        </div>
+        <a href="docs/boliginformasjon" class="nav-card-link">
+          <div class="nav-card">
+            <h3>Boliginformasjon</h3>
+            <p>Bestilling av boliginformasjon</p>
+          </div>
+        </a>
+        <a href="docs/forhandsutlysing" class="nav-card-link">
+          <div class="nav-card">
+            <h3>Forhåndsutlysing</h3>
+            <p>Forhåndsavklaringer om forkjøpsrett</p>
+          </div>
+        </a>
+        <a href="docs/salgsmelding" class="nav-card-link">
+          <div class="nav-card">
+            <h3>Salgsmelding</h3>
+            <p>Varsling om salg og eierskifter</p>
+          </div>
+        </a>
+        <a href="docs/endring-overdragelsesdato" class="nav-card-link">
+          <div class="nav-card">
+            <h3>Endring overdragelsesdato</h3>
+            <p>Oppdatering av overtakelsesdato</p>
+          </div>
+        </a>
+        <a href="docs/endring-kjopere" class="nav-card-link">
+          <div class="nav-card">
+            <h3>Endring kjøpere</h3>
+            <p>Endringer i kjøperinformasjon</p>
+          </div>
+        </a>
+        <a href="docs/sluttbrev" class="nav-card-link">
+          <div class="nav-card">
+            <h3>Sluttbrev</h3>
+            <p>Sluttbrev og ferdigstillelse</p>
+          </div>
+        </a>
+        <a href="docs/restanse" class="nav-card-link">
+          <div class="nav-card">
+            <h3>Restanse</h3>
+            <p>Håndtering av restanser</p>
+          </div>
+        </a>
       </div>
     </div>
 
     <div class="card-section">
       <h2>Enkeltstående informasjonsmeldinger</h2>
       <div class="card-grid">
-        <div class="nav-card">
-          <h3><a href="docs/sumgjeld">SumGjeld</a></h3>
-          <p>Forespørsler om total gjeld</p>
-        </div>
-        <div class="nav-card">
-          <h3><a href="docs/sumfelleskostnader">SumFelleskostnader</a></h3>
-          <p>Forespørsler om totale felleskostnader</p>
-        </div>
+        <a href="docs/sumgjeld" class="nav-card-link">
+          <div class="nav-card">
+            <h3>SumGjeld</h3>
+            <p>Forespørsler om total gjeld</p>
+          </div>
+        </a>
+        <a href="docs/sumfelleskostnader" class="nav-card-link">
+          <div class="nav-card">
+            <h3>SumFelleskostnader</h3>
+            <p>Forespørsler om totale felleskostnader</p>
+          </div>
+        </a>
       </div>
     </div>
 
     <div class="card-section">
       <h2>Systemmeldinger</h2>
       <div class="card-grid">
-        <div class="nav-card">
-          <h3><a href="docs/feilmeldinger">Feilmeldinger</a></h3>
-          <p>Oversikt over feilkoder</p>
-        </div>
+        <a href="docs/feilmeldinger" class="nav-card-link">
+          <div class="nav-card">
+            <h3>Feilmeldinger</h3>
+            <p>Oversikt over feilkoder</p>
+          </div>
+        </a>
       </div>
     </div>
   </div>
@@ -198,6 +238,16 @@ layout: home
   margin-top: 1rem;
 }
 
+.nav-card-link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+.nav-card-link:hover {
+  text-decoration: none;
+}
+
 .nav-card {
   background: var(--ambita-white);
   border: 1px solid var(--ambita-purple-200);
@@ -207,11 +257,18 @@ layout: home
   box-shadow: 0 2px 8px rgba(13, 10, 39, 0.1);
 }
 
-.nav-card:hover {
+.nav-card-link:hover .nav-card,
+.nav-card-link:focus .nav-card {
   transform: translateY(-3px);
   box-shadow: 0 8px 24px rgba(13, 10, 39, 0.15);
   border-color: var(--ambita-purple-400);
   background: var(--ambita-purple-100);
+}
+
+.nav-card-link:focus {
+  outline: 2px solid var(--ambita-purple-500);
+  outline-offset: 2px;
+  border-radius: var(--border-radius-m);
 }
 
 .nav-card h3 {
@@ -219,17 +276,12 @@ layout: home
   font-size: 1.1rem;
   font-family: var(--font-family-title);
   font-weight: 600;
-}
-
-.nav-card h3 a {
-  text-decoration: none;
   color: var(--ambita-purple-600);
-  transition: color 0.2s ease;
 }
 
-.nav-card h3 a:hover {
+.nav-card-link:hover .nav-card h3,
+.nav-card-link:focus .nav-card h3 {
   color: var(--ambita-purple-500);
-  text-decoration: none;
 }
 
 .nav-card p {
