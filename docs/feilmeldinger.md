@@ -26,6 +26,7 @@ The following error codes are defined in `callbackTypes.ts` and can be used in t
 | 34 | sakstypeForKlientIkkeFunnet | Case type for client not found | The case type for the specific client was not found |
 | 35 | endringOverdragelseIKunngjoringsperioden | Transfer date change during announcement period not allowed | Cannot change transfer date during the announcement period |
 | 39 | salgsmeldingKanIkkeLeveresDigital | Sales notification cannot be delivered digitally | Active manual pre-listing exists. Contact property manager! |
+| 99 | midlertidigFeil | Temporary error, retry later | Property manager experienced a temporary error and requests retry |
 
 ## Error fields
 
@@ -92,6 +93,7 @@ Følgende feilkoder er definert i `callbackTypes.ts` og kan brukes i feltet `fei
 | 34 | sakstypeForKlientIkkeFunnet | Sakstype for klient ikke funnet | Relevant sakstype for oppgitt klient finnes ikke |
 | 35 | endringOverdragelseIKunngjoringsperioden | Datoendring ikke tillatt i kunngjøringsperioden | Overdragelsesdato kan ikke endres mens kunngjøring pågår |
 | 39 | salgsmeldingKanIkkeLeveresDigital | Salgsmelding kan ikke leveres digitalt | Det finnes en aktiv manuell forhåndsutlysing. Kontakt forretningsfører! |
+| 99 | midlertidigFeil | Midlertidig feil, prøv igjen senere | Forretningsfører opplevde en midlertidig feil og ber om at det prøves igjen |
 
 ## Felter i feilmeldingen
 
