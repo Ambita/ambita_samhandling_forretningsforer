@@ -182,3 +182,11 @@ export interface SumGjeld extends BasicProduct {
 export interface SumFelleskostnader extends BasicProduct {
   type: 'sumfelleskostnader'
 }
+
+/**
+ * Megleropplysninger
+ * Order object data for delivery to the broker
+ */
+export interface Megleropplysninger extends BasicProduct {
+  type: 'megleropplysninger'
+} 

@@ -18,6 +18,12 @@ layout: home
             <p>Property information requests</p>
           </div>
         </a>
+        <a href="docs/megleropplysninger" class="nav-card-link">
+          <div class="nav-card">
+            <h3>Megleropplysninger</h3>
+            <p>Broker information requests</p>
+          </div>
+        </a>
         <a href="docs/forhandsutlysing" class="nav-card-link">
           <div class="nav-card">
             <h3>Forhåndsutlysing</h3>
@@ -109,6 +115,12 @@ layout: home
           <div class="nav-card">
             <h3>Boliginformasjon</h3>
             <p>Bestilling av boliginformasjon</p>
+          </div>
+        </a>
+        <a href="docs/megleropplysninger" class="nav-card-link">
+          <div class="nav-card">
+            <h3>Megleropplysninger</h3>
+            <p>Bestilling av megleropplysninger</p>
           </div>
         </a>
         <a href="docs/forhandsutlysing" class="nav-card-link">
