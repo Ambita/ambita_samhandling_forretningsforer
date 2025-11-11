@@ -93,7 +93,17 @@ We will transmit the following request message:
     "braB": 5,
     "bta": 140
   },
-  "prisantydning": 1000000
+  "prisantydning": 1000000,
+  "visninger": [
+    {
+      "visningStarter": "2025-11-15T10:00:00+01:00",
+      "visningSlutter": "2025-11-15T11:00:00+01:00"
+    },
+    {
+      "visningStarter": "2025-11-17T14:00:00+01:00",
+      "visningSlutter": "2025-11-17T15:00:00+01:00"
+    }
+  ]
 }
 ```
 
@@ -113,6 +123,9 @@ For the other fields explanations see [common request fields](boliginformasjon.m
   * srom (sum sekundærrom)
 * selgere (sellers) - list of owners pulled from the broker system. Uses the same structure as buyers in the sales message
 * prisantydning - price suggestion
+* visninger (showings) - optional list of scheduled property showings. Only includes future showings. Omitted if no showings exist or none are in the future.
+  * visningStarter - showing start date and time (ISO 8601 format with timezone)
+  * visningSlutter - showing end date and time (ISO 8601 format with timezone)
 
 ## Early clarification response
 
@@ -344,7 +357,17 @@ Vi sender følgende bestilling til forretningsfører:
     "braB": 5,
     "bta": 140
   },
-  "prisantydning": 1000000
+  "prisantydning": 1000000,
+  "visninger": [
+    {
+      "visningStarter": "2025-11-15T10:00:00+01:00",
+      "visningSlutter": "2025-11-15T11:00:00+01:00"
+    },
+    {
+      "visningStarter": "2025-11-17T14:00:00+01:00",
+      "visningSlutter": "2025-11-17T15:00:00+01:00"
+    }
+  ]
 }
 ```
 
@@ -364,6 +387,9 @@ Felles felter for forespørsler er dokumentert under [boliginformasjon](boliginf
   * srom – sum sekundærrom
 * selgere – liste over registrerte eiere, samme struktur som kjøpere i salgsmeldingen
 * prisantydning – meglerens prisvurdering
+* visninger – valgfri liste over planlagte visninger. Inkluderer bare fremtidige visninger. Utelates hvis ingen visninger finnes eller ingen er i fremtiden.
+  * visningStarter – starttidspunkt for visningen (ISO 8601-format med tidssone)
+  * visningSlutter – sluttidspunkt for visningen (ISO 8601-format med tidssone)
 
 ## Tidlig svar på forhåndsutlysing
 

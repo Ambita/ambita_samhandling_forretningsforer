@@ -29,6 +29,11 @@ export interface Bolig {
   leilighetsnummer?: string
 }
 
+export interface Visning {
+  visningStarter: ISODateTime
+  visningSlutter: ISODateTime
+}
+
 export enum RegisterenhetType {
   matrikkel = 'matrikkel',
   borettsandel = 'borettsandel',
@@ -110,6 +115,7 @@ export interface Forhandsutlysing extends BasicProduct {
   omsetningstype?: 'salg' | 'tvangssalg' | 'utleie' | 'verdivurdering' | 'oppgjorsoppdrag'
   finnkode?: string
   prisantydning?: number
+  visninger?: Visning[]
 }
 
 /**
