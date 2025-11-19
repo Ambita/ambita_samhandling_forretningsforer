@@ -16,7 +16,7 @@
     "@typespec/rest": "^0.73.0"
   },
   "devDependencies": {
-    "@openapitools/openapi-generator-cli": "^2.23.1"
+    "@openapitools/openapi-generator-cli": "^2.25.1"
   },
   "private": true
 }
