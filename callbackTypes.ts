@@ -65,7 +65,7 @@ export interface Kontakt {
   adresse: Adresse
   epost?: string
   telefon?: string
-  eierbrok: Eierbrok
+  eierbrok?: Eierbrok
 }
 
 export interface Callback {
