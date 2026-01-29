@@ -136,6 +136,139 @@ An example json request can look like this:
 }
 ```
 
+</div>
+
+<div class="language-content lang-no" lang="no" markdown="1">
+
+# Salgsmelding
+
+Når eiendommen er solgt, sender megler en salgsmelding til forretningsfører. Meldingen inneholder alle opplysninger som trengs for å oppdatere systemene, avklare forkjøpsrett og håndtere styregodkjenning.
+
+Etter at bestillingen `salgsmelding` er sendt, kan forretningsfører svare med inntil tre meldinger:
+
+* `salgsmeldingmottatt` – valgfri bekreftelse som beskriver videre prosess
+* `salgsmeldingoppdatering` – valgfri statusoppdatering før styregodkjenning er komplett
+* `salgsmeldingfullfort` – påkrevd sluttmelding som markerer at prosessen er ferdig
+
+<div class="mermaid">
+flowchart LR
+  ambita([AMBITA]) --> salesReq["3.1.0<br/>Bestilling: salgsmelding"]
+  salesReq --> accountant([FORRETNINGSFØRER])
+  accountant -.-> received["3.2.0<br/>Svar: salgsmelding mottatt"]
+  received -.-> ambita
+  accountant -.-> updated["3.2.1<br/>Svar: salgsmelding oppdatert"]
+  updated -.-> ambita
+  accountant --> completed["3.2.2<br/>Svar: salgsmelding fullført"]
+  completed --> ambita
+
+classDef actor fill:#ffcc00,stroke:#0a0f0f,stroke-width:1px,color:#000;
+classDef request fill:#00ccff,stroke:#0a0f0f,stroke-width:1px,color:#000;
+classDef response fill:#33dd33,stroke:#0a0f0f,stroke-width:1px,color:#000;
+class ambita,accountant actor;
+class salesReq request;
+class received,updated,completed response;
+</div>
+
+## Forespørsel om salgsmelding
+
+Et eksempel på forespørselen:
+
+```json
+{
+  "type": "salgsmelding",
+  "ordreId": "60dbe743-3edf-44f4-92e5-0922dd82ba6e",
+  "estateId": "8edbaf12-7e21-4cf7-8d72-74277d004c32",
+  "oppdragsnummer": "8-0148/23",
+  "registerenhet": {
+    "type": "matrikkel",
+    "ident": "3802-71-119-0-21"
+  },
+  "bestiller": {
+    "id": "TBF",
+    "navn": "Broker Doe",
+    "epost": "tbf@domene.no",
+    "telefon": "79119911"
+  },
+  "meglerkontor": {
+    "orgnr": "987654323",
+    "avdelingsnr": "3",
+    "navn": "Avdeling3",
+    "adresse": {
+      "gateadresse": "Testvei 3",
+      "postnummer": "0030",
+      "poststed": "OSLO"
+    },
+    "telefon": "12345678"
+  },
+  "kontaktperson": {
+    "id": "AO",
+    "navn": "Anne Olsen",
+    "epost": "aol@domene.no",
+    "telefon": "12548630"
+  },
+  "kjopere": [{
+    "id": "12345",
+    "fornavn": "Ola",
+    "etternavn": "Nordmann",
+    "adresse": {
+      "gateadresse": "Testveg 1",
+      "postnummer": "0010",
+      "poststed": "OSLO"
+    },
+    "epost": "test@kjoper.no",
+    "telefon": "12345678",
+    "eierbrok": {
+      "teller": 1,
+      "nevner": 1
+    }
+  }],
+  "selgere": [{
+    "id": "54321",
+    "organisasjonsnavn": "Kari Nordmann AS",
+    "kontaktperson": "Kari Nordmann",
+    "adresse": {
+      "gateadresse": "Testveg 2",
+      "postnummer": "0010",
+      "poststed": "OSLO"
+    },
+    "epost": "test@selger.no",
+    "telefon": "12345678",
+    "eierbrok": {
+      "teller": 1,
+      "nevner": 1
+    }
+  }],
+  "salg": {
+    "kjopesum": 2990000,
+    "datoAkseptBud": "2022-06-30T12:00:00+02:00",
+    "datoOverdragelse": "2022-09-01T12:00:00+02:00",
+    "forbeholdBud": true
+  },
+  "bolig": {
+    "prom": 60,
+    "bra": 70,
+    "braI": 65,
+    "braE": 2,
+    "braB": 3,
+    "bta": 50,
+    "antallRom": 4,
+    "antallSoverom": 2,
+    "energibokstav": "F",
+    "energifargekode": "G",
+    "heis": false,
+    "veranda": true,
+    "parkering": "",
+    "oppvarming": "",
+    "adresse": {
+      "gateadresse": "Strandgaten 3",
+      "postnummer": "5000",
+      "poststed": "Bergen"
+    },
+    "leilighetsnummer": "H0101"
+  }
+}
+```
+
 ### Tilleggsfelter i forespørselen
 
 Felles felter er beskrevet under [boliginformasjon](boliginformasjon.md#request-fields-that-are-in-all-requests).
@@ -220,7 +353,7 @@ Når salgsmeldingen er registrert, kan forretningsfører sende en kvittering som
 * forkjopsrett – detaljer om forkjøpsprosessen
   * typeAvklaring – `fastpris` eller `forhandsutlyst`
   * statusForhandsutlysing – status på eventuell tidligere forhåndsutlysing
-  * utlysingsdato, utlysingssted, meldefrist – (valgfrie) hentes fra forhåndsutlysingen hvis tilgjengelig
+  * utlysingsdato, utlysingssted, meldefrist – påkrevd når typeAvklaring er `fastpris`, ikke inkludert når typeAvklaring er `forhandsutlyst`
 * styregodkjenningPakrevd – sann dersom styregodkjenning er nødvendig
 * styregodkjenning – informasjon om styregodkjenningen
   * handteresAvForretningsforer – sann når forretningsfører håndterer prosessen
@@ -404,6 +537,10 @@ Når alt er ferdigstilt, sendes sluttmeldingen som bekrefter eierskiftet:
 * kjopere – endelig kjøperliste slik forretningsfører har registrert den
 * epostRestanse – kontaktpunkt for videre restanseoppfølging
 
+</div>
+
+<div class="language-content lang-en" markdown="1">
+
 ### Extra request fields specific for sales requests
 
 For common request fields see [boliginformasjon](boliginformasjon.md#request-fields-that-are-in-all-requests)
@@ -502,9 +639,9 @@ After receiving and processing the sales request message, a message received an 
 * forkjopsrett (clarification) - if clarification needed
   * typeAvklaring (type of clarification) - if this block is needed the field may be Fastpris or Forhåndsutlyst
   * statusForhandsutlysing (status clarification) - if previous clarification has been done and with what status
-  * utlysingsdato - (optional) see clarification response
-  * utlysingssted - (optional) see clarification response
-  * meldefrist - (optional) see clarification response
+  * utlysingsdato - required when typeAvklaring is `fastpris`, not included when typeAvklaring is `forhandsutlyst`
+  * utlysingssted - required when typeAvklaring is `fastpris`, not included when typeAvklaring is `forhandsutlyst`
+  * meldefrist - required when typeAvklaring is `fastpris`, not included when typeAvklaring is `forhandsutlyst`
 * styregodkjenningPakrevd (required) - true if board approval is needed
 * styregodkjenning (board approval) - if board approval is needed
   * handteresAvForretningsforer (handled by accountant) - true if handled by the accountant. If false, no other fields should be filled out in styregodkjenning  
@@ -686,136 +823,4 @@ Later, when all the processes like clarification and board approval have been co
   * andreHensyn (considerations) - Description of things to consider
 * kjopere (buyers) - List of buyers registered by the business manager
 
-</div>
-
-<div class="language-content lang-no" lang="no" markdown="1">
-
-# Salgsmelding
-
-Når eiendommen er solgt, sender megler en salgsmelding til forretningsfører. Meldingen inneholder alle opplysninger som trengs for å oppdatere systemene, avklare forkjøpsrett og håndtere styregodkjenning.
-
-Etter at bestillingen `salgsmelding` er sendt, kan forretningsfører svare med inntil tre meldinger:
-
-* `salgsmeldingmottatt` – valgfri bekreftelse som beskriver videre prosess
-* `salgsmeldingoppdatering` – valgfri statusoppdatering før styregodkjenning er komplett
-* `salgsmeldingfullfort` – påkrevd sluttmelding som markerer at prosessen er ferdig
-
-<div class="mermaid">
-flowchart LR
-  ambita([AMBITA]) --> salesReq["3.1.0<br/>Bestilling: salgsmelding"]
-  salesReq --> accountant([FORRETNINGSFØRER])
-  accountant -.-> received["3.2.0<br/>Svar: salgsmelding mottatt"]
-  received -.-> ambita
-  accountant -.-> updated["3.2.1<br/>Svar: salgsmelding oppdatert"]
-  updated -.-> ambita
-  accountant --> completed["3.2.2<br/>Svar: salgsmelding fullført"]
-  completed --> ambita
-
-classDef actor fill:#ffcc00,stroke:#0a0f0f,stroke-width:1px,color:#000;
-classDef request fill:#00ccff,stroke:#0a0f0f,stroke-width:1px,color:#000;
-classDef response fill:#33dd33,stroke:#0a0f0f,stroke-width:1px,color:#000;
-class ambita,accountant actor;
-class salesReq request;
-class received,updated,completed response;
-</div>
-
-## Forespørsel om salgsmelding
-
-Et eksempel på forespørselen:
-
-```json
-{
-  "type": "salgsmelding",
-  "ordreId": "60dbe743-3edf-44f4-92e5-0922dd82ba6e",
-  "estateId": "8edbaf12-7e21-4cf7-8d72-74277d004c32",
-  "oppdragsnummer": "8-0148/23",
-  "registerenhet": {
-    "type": "matrikkel",
-    "ident": "3802-71-119-0-21"
-  },
-  "bestiller": {
-    "id": "TBF",
-    "navn": "Broker Doe",
-    "epost": "tbf@domene.no",
-    "telefon": "79119911"
-  },
-  "meglerkontor": {
-    "orgnr": "987654323",
-    "avdelingsnr": "3",
-    "navn": "Avdeling3",
-    "adresse": {
-      "gateadresse": "Testvei 3",
-      "postnummer": "0030",
-      "poststed": "OSLO"
-    },
-    "telefon": "12345678"
-  },
-  "kontaktperson": {
-    "id": "AO",
-    "navn": "Anne Olsen",
-    "epost": "aol@domene.no",
-    "telefon": "12548630"
-  },
-  "kjopere": [{
-    "id": "12345",
-    "fornavn": "Ola",
-    "etternavn": "Nordmann",
-    "adresse": {
-      "gateadresse": "Testveg 1",
-      "postnummer": "0010",
-      "poststed": "OSLO"
-    },
-    "epost": "test@kjoper.no",
-    "telefon": "12345678",
-    "eierbrok": {
-      "teller": 1,
-      "nevner": 1
-    }
-  }],
-  "selgere": [{
-    "id": "54321",
-    "organisasjonsnavn": "Kari Nordmann AS",
-    "kontaktperson": "Kari Nordmann",
-    "adresse": {
-      "gateadresse": "Testveg 2",
-      "postnummer": "0010",
-      "poststed": "OSLO"
-    },
-    "epost": "test@selger.no",
-    "telefon": "12345678",
-    "eierbrok": {
-      "teller": 1,
-      "nevner": 1
-    }
-  }],
-  "salg": {
-    "kjopesum": 2990000,
-    "datoAkseptBud": "2022-06-30T12:00:00+02:00",
-    "datoOverdragelse": "2022-09-01T12:00:00+02:00",
-    "forbeholdBud": true
-  },
-  "bolig": {
-    "prom": 60,
-    "bra": 70,
-    "braI": 65,
-    "braE": 2,
-    "braB": 3,
-    "bta": 50,
-    "antallRom": 4,
-    "antallSoverom": 2,
-    "energibokstav": "F",
-    "energifargekode": "G",
-    "heis": false,
-    "veranda": true,
-    "parkering": "",
-    "oppvarming": "",
-    "adresse": {
-      "gateadresse": "Strandgaten 3",
-      "postnummer": "5000",
-      "poststed": "Bergen"
-    },
-    "leilighetsnummer": "H0101"
-  }
-}
-```
 </div>
