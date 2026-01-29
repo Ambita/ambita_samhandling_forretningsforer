@@ -39,13 +39,13 @@ namespace Samhandling.Client.Model
         /// <param name="utlysingssted">utlysingssted</param>
         /// <param name="meldefrist">meldefrist</param>
         [JsonConstructor]
-        public SalgsmeldingForkjopsrett(TypeAvklaringEnum typeAvklaring, StatusForhandsutlysingEnum statusForhandsutlysing, string utlysingsdato, string utlysingssted, string meldefrist)
+        public SalgsmeldingForkjopsrett(TypeAvklaringEnum typeAvklaring, StatusForhandsutlysingEnum statusForhandsutlysing, Option<string?> utlysingsdato = default, Option<string?> utlysingssted = default, Option<string?> meldefrist = default)
         {
             TypeAvklaring = typeAvklaring;
             StatusForhandsutlysing = statusForhandsutlysing;
-            Utlysingsdato = utlysingsdato;
-            Utlysingssted = utlysingssted;
-            Meldefrist = meldefrist;
+            UtlysingsdatoOption = utlysingsdato;
+            UtlysingsstedOption = utlysingssted;
+            MeldefristOption = meldefrist;
             OnCreated();
         }
 
@@ -238,22 +238,43 @@ namespace Samhandling.Client.Model
         public StatusForhandsutlysingEnum StatusForhandsutlysing { get; set; }
 
         /// <summary>
+        /// Used to track the state of Utlysingsdato
+        /// </summary>
+        [JsonIgnore]
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
+        public Option<string?> UtlysingsdatoOption { get; private set; }
+
+        /// <summary>
         /// Gets or Sets Utlysingsdato
         /// </summary>
         [JsonPropertyName("utlysingsdato")]
-        public string Utlysingsdato { get; set; }
+        public string? Utlysingsdato { get { return this.UtlysingsdatoOption; } set { this.UtlysingsdatoOption = new(value); } }
+
+        /// <summary>
+        /// Used to track the state of Utlysingssted
+        /// </summary>
+        [JsonIgnore]
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
+        public Option<string?> UtlysingsstedOption { get; private set; }
 
         /// <summary>
         /// Gets or Sets Utlysingssted
         /// </summary>
         [JsonPropertyName("utlysingssted")]
-        public string Utlysingssted { get; set; }
+        public string? Utlysingssted { get { return this.UtlysingsstedOption; } set { this.UtlysingsstedOption = new(value); } }
+
+        /// <summary>
+        /// Used to track the state of Meldefrist
+        /// </summary>
+        [JsonIgnore]
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
+        public Option<string?> MeldefristOption { get; private set; }
 
         /// <summary>
         /// Gets or Sets Meldefrist
         /// </summary>
         [JsonPropertyName("meldefrist")]
-        public string Meldefrist { get; set; }
+        public string? Meldefrist { get { return this.MeldefristOption; } set { this.MeldefristOption = new(value); } }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -279,21 +300,21 @@ namespace Samhandling.Client.Model
         /// <returns>Validation Result</returns>
         IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
-            if (this.Utlysingsdato != null) {
+            if (this.UtlysingsdatoOption.Value != null) {
                 // Utlysingsdato (string) pattern
                 Regex regexUtlysingsdato = new Regex(@"^[0-9]{4}-[0-9]{2}-[0-9]{2}$", RegexOptions.CultureInvariant);
 
-                if (!regexUtlysingsdato.Match(this.Utlysingsdato).Success)
+                if (this.UtlysingsdatoOption.Value != null &&!regexUtlysingsdato.Match(this.UtlysingsdatoOption.Value).Success)
                 {
                     yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Utlysingsdato, must match a pattern of " + regexUtlysingsdato, new [] { "Utlysingsdato" });
                 }
             }
 
-            if (this.Meldefrist != null) {
+            if (this.MeldefristOption.Value != null) {
                 // Meldefrist (string) pattern
                 Regex regexMeldefrist = new Regex(@"^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}(Z|[+-][0-9]{2}:[0-9]{2})$", RegexOptions.CultureInvariant);
 
-                if (!regexMeldefrist.Match(this.Meldefrist).Success)
+                if (this.MeldefristOption.Value != null &&!regexMeldefrist.Match(this.MeldefristOption.Value).Success)
                 {
                     yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Meldefrist, must match a pattern of " + regexMeldefrist, new [] { "Meldefrist" });
                 }
@@ -377,15 +398,6 @@ namespace Samhandling.Client.Model
             if (!statusForhandsutlysing.IsSet)
                 throw new ArgumentException("Property is required for class SalgsmeldingForkjopsrett.", nameof(statusForhandsutlysing));
 
-            if (!utlysingsdato.IsSet)
-                throw new ArgumentException("Property is required for class SalgsmeldingForkjopsrett.", nameof(utlysingsdato));
-
-            if (!utlysingssted.IsSet)
-                throw new ArgumentException("Property is required for class SalgsmeldingForkjopsrett.", nameof(utlysingssted));
-
-            if (!meldefrist.IsSet)
-                throw new ArgumentException("Property is required for class SalgsmeldingForkjopsrett.", nameof(meldefrist));
-
             if (typeAvklaring.IsSet && typeAvklaring.Value == null)
                 throw new ArgumentNullException(nameof(typeAvklaring), "Property is not nullable for class SalgsmeldingForkjopsrett.");
 
@@ -401,7 +413,7 @@ namespace Samhandling.Client.Model
             if (meldefrist.IsSet && meldefrist.Value == null)
                 throw new ArgumentNullException(nameof(meldefrist), "Property is not nullable for class SalgsmeldingForkjopsrett.");
 
-            return new SalgsmeldingForkjopsrett(typeAvklaring.Value!.Value!, statusForhandsutlysing.Value!.Value!, utlysingsdato.Value!, utlysingssted.Value!, meldefrist.Value!);
+            return new SalgsmeldingForkjopsrett(typeAvklaring.Value!.Value!, statusForhandsutlysing.Value!.Value!, utlysingsdato, utlysingssted, meldefrist);
         }
 
         /// <summary>
@@ -428,24 +440,27 @@ namespace Samhandling.Client.Model
         /// <exception cref="NotImplementedException"></exception>
         public void WriteProperties(Utf8JsonWriter writer, SalgsmeldingForkjopsrett salgsmeldingForkjopsrett, JsonSerializerOptions jsonSerializerOptions)
         {
-            if (salgsmeldingForkjopsrett.Utlysingsdato == null)
+            if (salgsmeldingForkjopsrett.UtlysingsdatoOption.IsSet && salgsmeldingForkjopsrett.Utlysingsdato == null)
                 throw new ArgumentNullException(nameof(salgsmeldingForkjopsrett.Utlysingsdato), "Property is required for class SalgsmeldingForkjopsrett.");
 
-            if (salgsmeldingForkjopsrett.Utlysingssted == null)
+            if (salgsmeldingForkjopsrett.UtlysingsstedOption.IsSet && salgsmeldingForkjopsrett.Utlysingssted == null)
                 throw new ArgumentNullException(nameof(salgsmeldingForkjopsrett.Utlysingssted), "Property is required for class SalgsmeldingForkjopsrett.");
 
-            if (salgsmeldingForkjopsrett.Meldefrist == null)
+            if (salgsmeldingForkjopsrett.MeldefristOption.IsSet && salgsmeldingForkjopsrett.Meldefrist == null)
                 throw new ArgumentNullException(nameof(salgsmeldingForkjopsrett.Meldefrist), "Property is required for class SalgsmeldingForkjopsrett.");
 
             var typeAvklaringRawValue = SalgsmeldingForkjopsrett.TypeAvklaringEnumToJsonValue(salgsmeldingForkjopsrett.TypeAvklaring);
             writer.WriteString("typeAvklaring", typeAvklaringRawValue);
             var statusForhandsutlysingRawValue = SalgsmeldingForkjopsrett.StatusForhandsutlysingEnumToJsonValue(salgsmeldingForkjopsrett.StatusForhandsutlysing);
             writer.WriteString("statusForhandsutlysing", statusForhandsutlysingRawValue);
-            writer.WriteString("utlysingsdato", salgsmeldingForkjopsrett.Utlysingsdato);
+            if (salgsmeldingForkjopsrett.UtlysingsdatoOption.IsSet)
+                writer.WriteString("utlysingsdato", salgsmeldingForkjopsrett.Utlysingsdato);
 
-            writer.WriteString("utlysingssted", salgsmeldingForkjopsrett.Utlysingssted);
+            if (salgsmeldingForkjopsrett.UtlysingsstedOption.IsSet)
+                writer.WriteString("utlysingssted", salgsmeldingForkjopsrett.Utlysingssted);
 
-            writer.WriteString("meldefrist", salgsmeldingForkjopsrett.Meldefrist);
+            if (salgsmeldingForkjopsrett.MeldefristOption.IsSet)
+                writer.WriteString("meldefrist", salgsmeldingForkjopsrett.Meldefrist);
         }
     }
 }

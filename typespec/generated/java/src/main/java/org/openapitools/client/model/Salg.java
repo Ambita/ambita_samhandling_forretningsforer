@@ -38,7 +38,7 @@ import org.openapitools.client.ApiClient;
   Salg.JSON_PROPERTY_DATO_OVERDRAGELSE,
   Salg.JSON_PROPERTY_FORBEHOLD_BUD
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-08-25T20:06:52.009382+02:00[Europe/Oslo]", comments = "Generator version: 7.15.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-29T12:07:27.490528+01:00[Europe/Oslo]", comments = "Generator version: 7.15.0")
 public class Salg {
   public static final String JSON_PROPERTY_KJOPESUM = "kjopesum";
   @javax.annotation.Nonnull

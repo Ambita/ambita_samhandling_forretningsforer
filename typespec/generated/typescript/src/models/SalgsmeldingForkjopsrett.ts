@@ -36,19 +36,19 @@ export interface SalgsmeldingForkjopsrett {
      * @type {string}
      * @memberof SalgsmeldingForkjopsrett
      */
-    utlysingsdato: string;
+    utlysingsdato?: string;
     /**
      * 
      * @type {string}
      * @memberof SalgsmeldingForkjopsrett
      */
-    utlysingssted: string;
+    utlysingssted?: string;
     /**
      * 
      * @type {string}
      * @memberof SalgsmeldingForkjopsrett
      */
-    meldefrist: string;
+    meldefrist?: string;
 }
 
 
@@ -80,9 +80,6 @@ export type SalgsmeldingForkjopsrettStatusForhandsutlysingEnum = typeof Salgsmel
 export function instanceOfSalgsmeldingForkjopsrett(value: object): value is SalgsmeldingForkjopsrett {
     if (!('typeAvklaring' in value) || value['typeAvklaring'] === undefined) return false;
     if (!('statusForhandsutlysing' in value) || value['statusForhandsutlysing'] === undefined) return false;
-    if (!('utlysingsdato' in value) || value['utlysingsdato'] === undefined) return false;
-    if (!('utlysingssted' in value) || value['utlysingssted'] === undefined) return false;
-    if (!('meldefrist' in value) || value['meldefrist'] === undefined) return false;
     return true;
 }
 
@@ -98,9 +95,9 @@ export function SalgsmeldingForkjopsrettFromJSONTyped(json: any, ignoreDiscrimin
         
         'typeAvklaring': json['typeAvklaring'],
         'statusForhandsutlysing': json['statusForhandsutlysing'],
-        'utlysingsdato': json['utlysingsdato'],
-        'utlysingssted': json['utlysingssted'],
-        'meldefrist': json['meldefrist'],
+        'utlysingsdato': json['utlysingsdato'] == null ? undefined : json['utlysingsdato'],
+        'utlysingssted': json['utlysingssted'] == null ? undefined : json['utlysingssted'],
+        'meldefrist': json['meldefrist'] == null ? undefined : json['meldefrist'],
     };
 }
 

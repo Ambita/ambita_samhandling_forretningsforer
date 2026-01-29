@@ -81,6 +81,15 @@ namespace Samhandling.Client.Test.Model
         }
 
         /// <summary>
+        /// Test the property 'AndreHensyn'
+        /// </summary>
+        [Fact]
+        public void AndreHensynTest()
+        {
+            // TODO unit test for the property 'AndreHensyn'
+        }
+
+        /// <summary>
         /// Test the property 'Utlysingsdato'
         /// </summary>
         [Fact]
@@ -105,15 +114,6 @@ namespace Samhandling.Client.Test.Model
         public void MeldefristTest()
         {
             // TODO unit test for the property 'Meldefrist'
-        }
-
-        /// <summary>
-        /// Test the property 'AndreHensyn'
-        /// </summary>
-        [Fact]
-        public void AndreHensynTest()
-        {
-            // TODO unit test for the property 'AndreHensyn'
         }
     }
 }

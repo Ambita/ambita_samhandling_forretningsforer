@@ -53,6 +53,8 @@ public enum Feilkode {
   
   NUMBER_34(new BigDecimal("34")),
   
+  NUMBER_35(new BigDecimal("35")),
+  
   NUMBER_39(new BigDecimal("39"));
 
   private BigDecimal value;

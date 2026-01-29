@@ -39,7 +39,7 @@ import org.openapitools.client.ApiClient;
   SalgsmeldingForkjopsrett.JSON_PROPERTY_UTLYSINGSSTED,
   SalgsmeldingForkjopsrett.JSON_PROPERTY_MELDEFRIST
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-08-25T20:06:52.009382+02:00[Europe/Oslo]", comments = "Generator version: 7.15.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-29T12:07:27.490528+01:00[Europe/Oslo]", comments = "Generator version: 7.15.0")
 public class SalgsmeldingForkjopsrett {
   /**
    * Gets or Sets typeAvklaring
@@ -126,15 +126,15 @@ public class SalgsmeldingForkjopsrett {
   private StatusForhandsutlysingEnum statusForhandsutlysing;
 
   public static final String JSON_PROPERTY_UTLYSINGSDATO = "utlysingsdato";
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   private String utlysingsdato;
 
   public static final String JSON_PROPERTY_UTLYSINGSSTED = "utlysingssted";
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   private String utlysingssted;
 
   public static final String JSON_PROPERTY_MELDEFRIST = "meldefrist";
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   private String meldefrist;
 
   public SalgsmeldingForkjopsrett() { 
@@ -188,7 +188,7 @@ public class SalgsmeldingForkjopsrett {
   }
 
 
-  public SalgsmeldingForkjopsrett utlysingsdato(@javax.annotation.Nonnull String utlysingsdato) {
+  public SalgsmeldingForkjopsrett utlysingsdato(@javax.annotation.Nullable String utlysingsdato) {
     this.utlysingsdato = utlysingsdato;
     return this;
   }
@@ -197,22 +197,22 @@ public class SalgsmeldingForkjopsrett {
    * Get utlysingsdato
    * @return utlysingsdato
    */
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_UTLYSINGSDATO)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public String getUtlysingsdato() {
     return utlysingsdato;
   }
 
 
   @JsonProperty(JSON_PROPERTY_UTLYSINGSDATO)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setUtlysingsdato(@javax.annotation.Nonnull String utlysingsdato) {
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setUtlysingsdato(@javax.annotation.Nullable String utlysingsdato) {
     this.utlysingsdato = utlysingsdato;
   }
 
 
-  public SalgsmeldingForkjopsrett utlysingssted(@javax.annotation.Nonnull String utlysingssted) {
+  public SalgsmeldingForkjopsrett utlysingssted(@javax.annotation.Nullable String utlysingssted) {
     this.utlysingssted = utlysingssted;
     return this;
   }
@@ -221,22 +221,22 @@ public class SalgsmeldingForkjopsrett {
    * Get utlysingssted
    * @return utlysingssted
    */
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_UTLYSINGSSTED)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public String getUtlysingssted() {
     return utlysingssted;
   }
 
 
   @JsonProperty(JSON_PROPERTY_UTLYSINGSSTED)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setUtlysingssted(@javax.annotation.Nonnull String utlysingssted) {
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setUtlysingssted(@javax.annotation.Nullable String utlysingssted) {
     this.utlysingssted = utlysingssted;
   }
 
 
-  public SalgsmeldingForkjopsrett meldefrist(@javax.annotation.Nonnull String meldefrist) {
+  public SalgsmeldingForkjopsrett meldefrist(@javax.annotation.Nullable String meldefrist) {
     this.meldefrist = meldefrist;
     return this;
   }
@@ -245,17 +245,17 @@ public class SalgsmeldingForkjopsrett {
    * Get meldefrist
    * @return meldefrist
    */
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_MELDEFRIST)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public String getMeldefrist() {
     return meldefrist;
   }
 
 
   @JsonProperty(JSON_PROPERTY_MELDEFRIST)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setMeldefrist(@javax.annotation.Nonnull String meldefrist) {
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setMeldefrist(@javax.annotation.Nullable String meldefrist) {
     this.meldefrist = meldefrist;
   }
 

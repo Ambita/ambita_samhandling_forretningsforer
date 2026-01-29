@@ -590,6 +590,7 @@ components:
       - 32
       - 33
       - 34
+      - 35
       - 39
       type: number
     ForhandsutlysingOrdre:
@@ -1013,11 +1014,8 @@ components:
           pattern: "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}(Z|[+-][0-9]{2}:[0-9]{2})$"
           type: string
       required:
-      - meldefrist
       - statusForhandsutlysing
       - typeAvklaring
-      - utlysingsdato
-      - utlysingssted
       type: object
     SalgsmeldingForkjopsrettFullfort:
       allOf:

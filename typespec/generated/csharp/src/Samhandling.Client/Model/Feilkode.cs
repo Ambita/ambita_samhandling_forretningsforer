@@ -86,9 +86,14 @@ namespace Samhandling.Client.Model
         _34 = 11,
 
         /// <summary>
+        /// Enum _35 for value: 35
+        /// </summary>
+        _35 = 12,
+
+        /// <summary>
         /// Enum _39 for value: 39
         /// </summary>
-        _39 = 12
+        _39 = 13
     }
 
     /// <summary>
@@ -136,6 +141,9 @@ namespace Samhandling.Client.Model
             if (value.Equals("34"))
                 return Feilkode._34;
 
+            if (value.Equals("35"))
+                return Feilkode._35;
+
             if (value.Equals("39"))
                 return Feilkode._39;
 
@@ -181,6 +189,9 @@ namespace Samhandling.Client.Model
 
             if (value.Equals("34"))
                 return Feilkode._34;
+
+            if (value.Equals("35"))
+                return Feilkode._35;
 
             if (value.Equals("39"))
                 return Feilkode._39;

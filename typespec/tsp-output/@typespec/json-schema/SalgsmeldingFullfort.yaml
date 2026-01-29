@@ -196,9 +196,6 @@ $defs:
     required:
       - typeAvklaring
       - statusForhandsutlysing
-      - utlysingsdato
-      - utlysingssted
-      - meldefrist
   Styregodkjenning:
     type: object
     properties:

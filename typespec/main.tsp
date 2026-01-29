@@ -388,9 +388,9 @@ model StyregodkjenningFullfort extends Styregodkjenning {
 model SalgsmeldingForkjopsrett {
   typeAvklaring: "fastpris" | "forhandsutlysing";
   statusForhandsutlysing: "ikke_forhandsutlysing" | "med_interessenter" | "uten_interessenter" | "forkjop_ikke_benyttet" | "ikke_avklart";
-  utlysingsdato: ISODate;
-  utlysingssted: string;
-  meldefrist: ISODateTime;
+  utlysingsdato?: ISODate;
+  utlysingssted?: string;
+  meldefrist?: ISODateTime;
 }
 
 model SalgsmeldingForkjopsrettFullfort extends SalgsmeldingForkjopsrett {

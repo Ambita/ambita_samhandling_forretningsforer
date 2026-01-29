@@ -11,9 +11,9 @@
 |**andreHensyn** | **String** |  |  [optional] |
 |**typeAvklaring** | [**TypeAvklaringEnum**](#TypeAvklaringEnum) |  |  |
 |**statusForhandsutlysing** | [**StatusForhandsutlysingEnum**](#StatusForhandsutlysingEnum) |  |  |
-|**utlysingsdato** | **String** |  |  |
-|**utlysingssted** | **String** |  |  |
-|**meldefrist** | **String** |  |  |
+|**utlysingsdato** | **String** |  |  [optional] |
+|**utlysingssted** | **String** |  |  [optional] |
+|**meldefrist** | **String** |  |  [optional] |
 
 
 

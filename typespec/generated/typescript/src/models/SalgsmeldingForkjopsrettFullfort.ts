@@ -48,19 +48,19 @@ export interface SalgsmeldingForkjopsrettFullfort {
      * @type {string}
      * @memberof SalgsmeldingForkjopsrettFullfort
      */
-    utlysingsdato: string;
+    utlysingsdato?: string;
     /**
      * 
      * @type {string}
      * @memberof SalgsmeldingForkjopsrettFullfort
      */
-    utlysingssted: string;
+    utlysingssted?: string;
     /**
      * 
      * @type {string}
      * @memberof SalgsmeldingForkjopsrettFullfort
      */
-    meldefrist: string;
+    meldefrist?: string;
 }
 
 
@@ -102,9 +102,6 @@ export function instanceOfSalgsmeldingForkjopsrettFullfort(value: object): value
     if (!('statusForkjopsrett' in value) || value['statusForkjopsrett'] === undefined) return false;
     if (!('typeAvklaring' in value) || value['typeAvklaring'] === undefined) return false;
     if (!('statusForhandsutlysing' in value) || value['statusForhandsutlysing'] === undefined) return false;
-    if (!('utlysingsdato' in value) || value['utlysingsdato'] === undefined) return false;
-    if (!('utlysingssted' in value) || value['utlysingssted'] === undefined) return false;
-    if (!('meldefrist' in value) || value['meldefrist'] === undefined) return false;
     return true;
 }
 
@@ -122,9 +119,9 @@ export function SalgsmeldingForkjopsrettFullfortFromJSONTyped(json: any, ignoreD
         'andreHensyn': json['andreHensyn'] == null ? undefined : json['andreHensyn'],
         'typeAvklaring': json['typeAvklaring'],
         'statusForhandsutlysing': json['statusForhandsutlysing'],
-        'utlysingsdato': json['utlysingsdato'],
-        'utlysingssted': json['utlysingssted'],
-        'meldefrist': json['meldefrist'],
+        'utlysingsdato': json['utlysingsdato'] == null ? undefined : json['utlysingsdato'],
+        'utlysingssted': json['utlysingssted'] == null ? undefined : json['utlysingssted'],
+        'meldefrist': json['meldefrist'] == null ? undefined : json['meldefrist'],
     };
 }
 

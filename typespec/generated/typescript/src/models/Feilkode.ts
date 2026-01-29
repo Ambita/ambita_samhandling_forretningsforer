@@ -29,6 +29,7 @@ export const Feilkode = {
     NUMBER_32: 32,
     NUMBER_33: 33,
     NUMBER_34: 34,
+    NUMBER_35: 35,
     NUMBER_39: 39
 } as const;
 export type Feilkode = typeof Feilkode[keyof typeof Feilkode];

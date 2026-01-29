@@ -6,12 +6,12 @@ Create a config.yaml file similar to what is below, then run the following power
 
 ```yaml
 generatorName: csharp
-inputSpec: typespec/tsp-output/@typespec/openapi3/openapi.yaml
+inputSpec: /Users/anders.abrahamsen/Development/meta_samhandling/github-docs/typespec/tsp-output/@typespec/openapi3/openapi.yaml
 outputDir: out
 
 # https://openapi-generator.tech/docs/generators/csharp
 additionalProperties:
-  packageGuid: '{7E52FE94-1B80-4ACB-8810-34F585C8F7BC}'
+  packageGuid: '{944DED11-6B94-447F-A295-8BB8543F5F52}'
 
 # https://openapi-generator.tech/docs/integrations/#github-integration
 # gitHost:

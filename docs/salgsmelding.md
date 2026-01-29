@@ -220,7 +220,7 @@ Når salgsmeldingen er registrert, kan forretningsfører sende en kvittering som
 * forkjopsrett – detaljer om forkjøpsprosessen
   * typeAvklaring – `fastpris` eller `forhandsutlyst`
   * statusForhandsutlysing – status på eventuell tidligere forhåndsutlysing
-  * utlysingsdato, utlysingssted, meldefrist – hentes fra forhåndsutlysingen
+  * utlysingsdato, utlysingssted, meldefrist – (valgfrie) hentes fra forhåndsutlysingen hvis tilgjengelig
 * styregodkjenningPakrevd – sann dersom styregodkjenning er nødvendig
 * styregodkjenning – informasjon om styregodkjenningen
   * handteresAvForretningsforer – sann når forretningsfører håndterer prosessen
@@ -502,9 +502,9 @@ After receiving and processing the sales request message, a message received an 
 * forkjopsrett (clarification) - if clarification needed
   * typeAvklaring (type of clarification) - if this block is needed the field may be Fastpris or Forhåndsutlyst
   * statusForhandsutlysing (status clarification) - if previous clarification has been done and with what status
-  * utlysingsdato - see clarification response
-  * utlysingssted - see clarification response
-  * meldefrist - see clarification response
+  * utlysingsdato - (optional) see clarification response
+  * utlysingssted - (optional) see clarification response
+  * meldefrist - (optional) see clarification response
 * styregodkjenningPakrevd (required) - true if board approval is needed
 * styregodkjenning (board approval) - if board approval is needed
   * handteresAvForretningsforer (handled by accountant) - true if handled by the accountant. If false, no other fields should be filled out in styregodkjenning  

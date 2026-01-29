@@ -188,9 +188,6 @@ $defs:
     required:
       - typeAvklaring
       - statusForhandsutlysing
-      - utlysingsdato
-      - utlysingssted
-      - meldefrist
   ISODate:
     type: string
     pattern: ^[0-9]{4}-[0-9]{2}-[0-9]{2}$

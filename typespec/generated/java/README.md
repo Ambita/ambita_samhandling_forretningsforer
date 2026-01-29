@@ -4,7 +4,7 @@
 
 - API version: 0.0.0
 
-- Build date: 2025-08-25T20:06:52.009382+02:00[Europe/Oslo]
+- Build date: 2026-01-29T12:07:27.490528+01:00[Europe/Oslo]
 
 - Generator version: 7.15.0
 

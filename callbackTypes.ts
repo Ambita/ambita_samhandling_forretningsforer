@@ -161,9 +161,9 @@ export interface StyregodkjenningFullfort extends Styregodkjenning {
 export interface SalgsmeldingForkjopsrett {
   typeAvklaring: 'fastpris' | 'forhandsutlysing'
   statusForhandsutlysing: 'ikke_forhandsutlysing' | 'med_interessenter' | 'uten_interessenter' | 'forkjop_ikke_benyttet' | 'ikke_avklart'
-  utlysingsdato: ISODate
-  utlysingssted: string
-  meldefrist: ISODateTime
+  utlysingsdato?: ISODate
+  utlysingssted?: string
+  meldefrist?: ISODateTime
 }
 
 export interface SalgsmeldingForkjopsrettFullfort extends SalgsmeldingForkjopsrett {

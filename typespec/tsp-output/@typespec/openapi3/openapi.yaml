@@ -808,9 +808,6 @@ components:
       required:
         - typeAvklaring
         - statusForhandsutlysing
-        - utlysingsdato
-        - utlysingssted
-        - meldefrist
       properties:
         typeAvklaring:
           type: string
