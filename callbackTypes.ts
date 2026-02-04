@@ -180,7 +180,7 @@ export interface SalgsmeldingMottatt extends Callback {
   ordreMottatt: ISODateTime
   harForkjopsrett: boolean
   forkjopsrett?: SalgsmeldingForkjopsrett
-  styregodkjenningPakrevd: boolean
+  styregodkjenningPakrevd?: boolean
   styregodkjenning?: Styregodkjenning
   tilknyttetLag: boolean
 }
@@ -194,7 +194,7 @@ export interface SalgsmeldingOppdatering extends Callback {
   ordreMottatt: ISODateTime
   harForkjopsrett: boolean
   forkjopsrett?: SalgsmeldingForkjopsrettFullfort
-  styregodkjenningPakrevd: boolean
+  styregodkjenningPakrevd?: boolean
   styregodkjenning?: Styregodkjenning
   kjopere: Kontakt[]
   tilknyttetLag: boolean
@@ -209,7 +209,7 @@ export interface SalgsmeldingFullfort extends Callback {
   ordreMottatt: ISODateTime
   harForkjopsrett: boolean
   forkjopsrett?: SalgsmeldingForkjopsrettFullfort
-  styregodkjenningPakrevd: boolean
+  styregodkjenningPakrevd?: boolean
   styregodkjenning?: StyregodkjenningFullfort
   kjopere: Kontakt[]
   tilknyttetLag: boolean

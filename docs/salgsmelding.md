@@ -354,7 +354,7 @@ Når salgsmeldingen er registrert, kan forretningsfører sende en kvittering som
   * typeAvklaring – `fastpris` eller `forhandsutlyst`
   * statusForhandsutlysing – status på eventuell tidligere forhåndsutlysing
   * utlysingsdato, utlysingssted, meldefrist – påkrevd når typeAvklaring er `fastpris`, ikke inkludert når typeAvklaring er `forhandsutlyst`
-* styregodkjenningPakrevd – sann dersom styregodkjenning er nødvendig
+* styregodkjenningPakrevd (valgfritt) – sann dersom styregodkjenning er nødvendig. Hvis dette feltet ikke er fylt ut vil dataen hentes fra tidligere uthentet boliginformasjon
 * styregodkjenning – informasjon om styregodkjenningen
   * handteresAvForretningsforer – sann når forretningsfører håndterer prosessen
   * initiertDato – når styret ble varslet
@@ -642,7 +642,7 @@ After receiving and processing the sales request message, a message received an 
   * utlysingsdato - required when typeAvklaring is `fastpris`, not included when typeAvklaring is `forhandsutlyst`
   * utlysingssted - required when typeAvklaring is `fastpris`, not included when typeAvklaring is `forhandsutlyst`
   * meldefrist - required when typeAvklaring is `fastpris`, not included when typeAvklaring is `forhandsutlyst`
-* styregodkjenningPakrevd (required) - true if board approval is needed
+* styregodkjenningPakrevd (optional) - true if board approval is needed. If this field is not provided, the value will be retrieved from previously fetched housing information
 * styregodkjenning (board approval) - if board approval is needed
   * handteresAvForretningsforer (handled by accountant) - true if handled by the accountant. If false, no other fields should be filled out in styregodkjenning  
   * initiertDato (date initialised) - The date the board will be notified
