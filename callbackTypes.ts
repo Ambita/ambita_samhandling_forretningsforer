@@ -232,7 +232,7 @@ export interface EndringOverdragelseBehandlet extends Callback {
 export interface EndringKjopereMottatt extends Callback {
   type: 'endringkjoperemottatt'
   ordreMottatt: ISODateTime
-  styregodkjenningPakrevd: boolean
+  styregodkjenningPakrevd?: boolean
   styregodkjenning?: Styregodkjenning
 }
 
@@ -243,7 +243,7 @@ export interface EndringKjopereMottatt extends Callback {
 export interface EndringKjopereFullfort extends Callback {
   type: 'endringkjoperefullfort'
   ordreMottatt: ISODateTime
-  styregodkjenningPakrevd: boolean
+  styregodkjenningPakrevd?: boolean
   styregodkjenning?: StyregodkjenningFullfort
 }
 

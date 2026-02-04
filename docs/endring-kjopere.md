@@ -142,7 +142,7 @@ This optional response is sent if the accountant needs renewed board approval be
 ### Fields specific for the received response
 
 * ordreMottatt - When the change request was received.
-* styregodkjenningPakrevd - Whether a new board approval is required.
+* styregodkjenningPakrevd (optional) - Whether a new board approval is required. If not provided, the value will be retrieved from previously fetched housing information.
 * styregodkjenning - Additional metadata when board approval is required, including who handles the case (`handteresAvForretningsforer`), when it started (`initiertDato`) and the response deadline (`meldefrist`).
 
 ## Change of buyers completed response
@@ -185,7 +185,7 @@ The accountant sends this response when the change has been processed.
 ### Fields specific for the completed response
 
 * ordreMottatt - When the change request was received.
-* styregodkjenningPakrevd - Whether board approval was required for the change.
+* styregodkjenningPakrevd (optional) - Whether board approval was required for the change. If not provided, the value will be retrieved from previously fetched housing information.
 * styregodkjenning - Final board approval details when relevant, including outcome (`statusStyregodkjenning`) and any other notes (`andreHensyn`).
 
 </div>
@@ -329,7 +329,7 @@ Denne valgfrie meldingen brukes når forretningsfører trenger ny styregodkjenni
 ### Felter i mottatt-meldingen
 
 * ordreMottatt – tidspunktet vi mottok forespørselen.
-* styregodkjenningPakrevd – om ny styregodkjenning er nødvendig.
+* styregodkjenningPakrevd (valgfritt) – om ny styregodkjenning er nødvendig. Hvis dette feltet ikke er fylt ut vil dataen hentes fra tidligere uthentet boliginformasjon.
 * styregodkjenning – metadata ved behov for styregodkjenning, inkludert hvem som håndterer saken (`handteresAvForretningsforer`), startdato (`initiertDato`) og svarfrist (`meldefrist`).
 
 ## Melding om fullført endring
@@ -372,7 +372,7 @@ Forretningsfører sender denne meldingen når endringen er ferdig behandlet.
 ### Felter i fullført-meldingen
 
 * ordreMottatt – tidspunktet forespørselen kom inn.
-* styregodkjenningPakrevd – om endringen krevde styregodkjenning.
+* styregodkjenningPakrevd (valgfritt) – om endringen krevde styregodkjenning. Hvis dette feltet ikke er fylt ut vil dataen hentes fra tidligere uthentet boliginformasjon.
 * styregodkjenning – endelig informasjon om styregodkjenningen, inkludert resultat (`statusStyregodkjenning`) og eventuelle merknader (`andreHensyn`).
 
 </div>
