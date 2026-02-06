@@ -273,6 +273,15 @@ export interface SumFelleskostnaderSvar extends Callback {
   sumFelleskostnader: number
 }
 
+/**
+ * Megleropplysninger
+ * returns object data for delivery to the broker
+ */
+export interface MegleropplysningerSvar extends Callback {
+  type: 'megleropplysninger'
+  objektdata: Record<string, any>
+}
+
 export type CallbackEvent =
   | Boliginformasjon
   | Feil
@@ -289,12 +298,4 @@ export type CallbackEvent =
   | SluttbrevAkseptert
   | SumGjeldSvar
   | SumFelleskostnaderSvar
-
-/**
- * Megleropplysninger
- * returns object data for delivery to the broker
- */
-export interface MegleropplysningerSvar extends Callback {
-  type: 'megleropplysninger'
-  objektdata: Record<string, any>
-}
+  | MegleropplysningerSvar
